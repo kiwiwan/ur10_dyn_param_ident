@@ -62,22 +62,22 @@ robot_def.bary_params
 # Create kinematics chain
 geom = Geometry(robot_def)
 from numpy import deg2rad
-angle = [0, deg2rad(-90), 0, deg2rad(90), 0, 0]
+angle = [0, 0, 0, 0, 0, 0]
 geom.draw_geom(angle)
 
 
-# Create dynamics
-dyn = Dynamics(robot_def, geom)
-robot_def.bary_params
-sympy.Matrix(dyn.base_param)
+# # Create dynamics
+# dyn = Dynamics(robot_def, geom)
+# robot_def.bary_params
+# sympy.Matrix(dyn.base_param)
 
 
 
 
-from data import RobotModel
-# Data to be saved
-robot_model = RobotModel(dyn)
-# Save
-save_data(model_folder, model_name, robot_model)
-print('Saved {} parameters'.format(len(robot_model.base_param)))
+# from data import RobotModel
+# # Data to be saved
+# robot_model = RobotModel(dyn)
+# # Save
+# save_data(model_folder, model_name, robot_model)
+# print('Saved {} parameters'.format(len(robot_model.base_param)))
 

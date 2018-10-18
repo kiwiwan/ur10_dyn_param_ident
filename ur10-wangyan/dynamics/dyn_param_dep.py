@@ -19,7 +19,7 @@ def find_dyn_parm_deps(dof, parm_num, regressor_func):
         vprint = lambda *a: None  # do-nothing function
 
 
-    samples = parm_num*2
+    samples = 1000 #parm_num*2
     round = 10
 
     pi = np.pi

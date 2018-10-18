@@ -1,7 +1,7 @@
 import cvxpy as cp
 import numpy as np
 import sympy
-import osqp
+#import osqp
 from utils import gen_DLki_mat
 
 
@@ -147,8 +147,9 @@ class SDPOpt:
         print("Solving problem...")
         self._prob = cp.Problem(self._obj, self._constraints)
 
-        #result = self._prob.solve(solver=cp.SCS, verbose=True, max_iters=55000)#15000
-        result = self._prob.solve(solver=cp.CVXOPT, verbose=True)
+        result = self._prob.solve(solver=cp.SCS, verbose=True, max_iters=15000)#15000
+        # result = self._prob.solve(solver=cp.CVXOPT, verbose=True)
+        # result = self._prob.solve(solver=cp.OSQP)
 
         self.x_result = self._x.value
         print(self._x.value)
